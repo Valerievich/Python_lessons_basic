@@ -23,10 +23,13 @@ print(my_round(2.9999967, 5))
 # Билет считается счастливым, если сумма его первых и последних цифр равны.
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
-# def lucky_ticket(ticket_number):
-#     pass
+def lucky_ticket(ticket_number):
+    ticket_str = str(ticket_number)
+    my_tuple = tuple(map(int, ticket_str))
+    n = len(ticket_str) // 2
+    return sum(my_tuple[:n]) == sum(my_tuple[n:])
 
 
-# print(lucky_ticket(123006))
-# print(lucky_ticket(12321))
-# print(lucky_ticket(436751))
+print(lucky_ticket(123006))
+print(lucky_ticket(12321))
+print(lucky_ticket(436751))
