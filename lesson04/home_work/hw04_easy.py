@@ -6,9 +6,19 @@
 # квадратами элементов исходного списка
 # [1, 2, 4, 0] --> [1, 4, 16, 0]
 
+my_list = [i for i in range(1,15)]
+list_sq = [i**2 for i in my_list]
+
+
 # Задание-2:
 # Даны два списка фруктов.
 # Получить список фруктов, присутствующих в обоих исходных списках.
+from itertools import chain
+
+fruit_lits1 = ['apple', 'banana']
+fruit_lits2 = ['orange', 'grape']
+fruit_lits3 = [i for i in (chain(fruit_lits1, fruit_lits2))]
+
 
 # Задание-3:
 # Дан список, заполненный произвольными числами.
@@ -16,3 +26,11 @@
 # + Элемент кратен 3
 # + Элемент положительный
 # + Элемент не кратен 4
+
+my_list2 = [i for i in range(1, 20)]
+
+def valid(some_list):
+    valid_list = [i for i in some_list if i % 3 == 0 if i > 0 if i % 4 ==0]
+    return valid_list
+
+print(valid(my_list2))
